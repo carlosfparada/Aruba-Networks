@@ -1,7 +1,7 @@
 ---
 
 - name: Aruba AOS CX create vlans
-  hosts: aruba
+  hosts: aoscx
   gather_facts: no
   tasks:
 
