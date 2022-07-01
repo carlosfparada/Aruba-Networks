@@ -5,18 +5,13 @@
   gather_facts: no
   tasks:
 
-  - name: Cisco IOS get facts 
-    cisco.ios.ios_facts:
+  - name: Aruba AOS CX get facts 
+    aoscx_facts:
       gather_subset:
-        - all
-      gather_network_resources:
-      #  - "interfaces"
-      #  - "l3_interfaces"
-      #  - "vlans"
-      #  - "bgp_global"
+        #- config
     register: _facts
   
-  - name: Aruba AOS debug AOS facts
+  - name: Aruba AOS CX debug facts
     debug:
       var: _facts
   

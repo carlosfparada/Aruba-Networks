@@ -1,13 +1,21 @@
 ---
 
-- name: Aruba AOS CX create vlans
+- name: Aruba AOS CX create vlans and assing to L2 interfaces
   hosts: aruba
   gather_facts: no
   tasks:
 
-      - name: Create VLAN 400
-        arubaoss_vlan:
-          vlan_id: 400
-          name: "vlan400"
-          config: "create"
-          command: config_vlan
+  - name: Create VLAN 100
+    aoscx_vlan:
+      vlan_id: 100
+      name: "vlan100"
+      description: "This is vlan100"
+      state: "create"
+      admin_state: up
+
+  - name: Configure Interface with vlan access 200
+    aoscx_l2_interface:
+      interface: 1/1/4
+      description: L2 Interface
+      vlan_mode: access
+      vlan_access: 100

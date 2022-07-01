@@ -1,0 +1,12 @@
+---
+
+- name: Aruba AOS CX execute command facts
+  hosts: aruba
+  gather_facts: no
+  tasks:
+
+    - name: Execute show run
+      aoscx_command:
+        commands:
+          - show run
+  

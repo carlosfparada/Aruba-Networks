@@ -1,0 +1,15 @@
+---
+
+- name: Aruba AOS CX create vlans
+  hosts: aruba
+  gather_facts: no
+  tasks:
+
+  - name: Create IPs on L3 Interface
+    aoscx_l3_interface:
+      interface: 1/1/3
+      description: L3 Interface
+      ipv4:
+        - 10.20.1.3/24
+      ipv6:
+        - 2000:db8::1234/64
