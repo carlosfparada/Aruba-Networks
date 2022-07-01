@@ -1,7 +1,7 @@
 ---
 
 - name: Aruba AOS CX create vlans and assing to L2 interfaces
-  hosts: aruba
+  hosts: aoscx
   gather_facts: no
   tasks:
 

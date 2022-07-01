@@ -1,0 +1,12 @@
+---
+
+- name: Aruba AOS CX create vlans
+  hosts: aoscx
+  gather_facts: no
+  tasks:
+
+  - include_tasks: get_facts.yml
+
+  - include_tasks: create_vlans.yml
+
+  - include_tasks: create_IPs.yml
